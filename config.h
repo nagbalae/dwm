@@ -79,8 +79,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER")},
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("$TERM -e ranger")},
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_m,      spawn,          SHCMD("$TERM -e ncmpcpp")},
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERM -e pulsemixer")},
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -100,8 +102,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_Escape, quit,           {0} },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
+	{ MODKEY,                       XK_F5,     spawn,          SHCMD("sh ~/.sh/changewallpaper") },
 	/*special keys*/
-	{ 0, XF86XK_TouchpadToggle, 		   spawn,	   SHCMD("(synclient | grep 'TouchpadOff.*1' && syclient TouchpadOff=0) || synclient TouchpadOff=1") },
+	{ 0, XF86XK_TouchpadToggle, 		   spawn,	   SHCMD("~/.sh/touchpad") },
 	{ 0, XF86XK_MonBrightnessUp,		   spawn,	   SHCMD("light -A 10") },
 	{ 0, XF86XK_MonBrightnessDown,		   spawn,	   SHCMD("light -U 10") },
 	{ 0, XF86XK_AudioMute,			   spawn,	   SHCMD("pamixer -t") },

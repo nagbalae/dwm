@@ -96,6 +96,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_s,      togglesticky,   {0} },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("$TERM -e ncmpcpp")},
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERM -e pulsemixer")},
 	{ MODKEY,                       XK_space,  setlayout,      {0} },

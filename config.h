@@ -77,6 +77,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER")},
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("$TERM -e nmtui")},
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("$TERM -e ranger")},
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[1]} },
@@ -89,7 +90,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_comma,  tagmon,          {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
@@ -101,8 +102,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_Escape, quit,           {0} },
-	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	{ MODKEY,                       XK_F5,     spawn,          SHCMD("sh ~/.sh/changewallpaper") },
+	{ MODKEY|ShiftMask,             XK_F5,     xrdb,           {.v = NULL } },/*I emulate this at the end of changewallpaper*/
 	/*special keys*/
 	{ 0, XF86XK_TouchpadToggle, 		   spawn,	   SHCMD("~/.sh/touchpad") },
 	{ 0, XF86XK_MonBrightnessUp,		   spawn,	   SHCMD("light -A 10") },

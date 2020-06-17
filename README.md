@@ -13,6 +13,7 @@ Go to [suckless' dwm page](https://dwm.suckless.org) or use [Luke's](https://git
 - Xrdb (using color0,3,7)
 - Vacant tags
 - Sticky (super+s)
+- Fullscreen (super+f)
 - The rest you can see for yourself in the code!
 ## Todo:
 - Move shortcuts to sxhkd

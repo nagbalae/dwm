@@ -1,6 +1,6 @@
 .TH DWM 1 dwm\-VERSION
 .SH NAME
-dwm \- dynamic window manager (Luke Smith <https://lukesmith.xyz>'s build)
+dwm \- dynamic window manager (nagbalae's build)
 .SH SYNOPSIS
 .B dwm
 .RB [ \-v ]
@@ -23,17 +23,6 @@ before the windows title.  The selected tags are indicated with a different
 color. The tags of the focused window are indicated with a filled square in the
 top left corner.  The tags which are applied to one or more windows are
 indicated with an empty square in the top left corner.
-.P
-dwm draws a small border around windows to indicate the focus state.
-.P
-.I
-libxft-bgra
-should be installed for this build of dwm. Arch users may install it via the
-AUR. Color characters and emoji are enabled, but these will cause crashes
-without the fix
-.I
-libxft-bgra
-offers.
 .SH OPTIONS
 .TP
 .B \-v
@@ -62,7 +51,7 @@ click on a tag label adds/removes that tag to/from the focused window.
 .TP
 .B Super\-Return
 Start terminal,
-.BR st(1).
+.BR $TERM.
 .TP
 .B Super\-d
 Spawn
@@ -75,23 +64,11 @@ Toggles bar on and off.
 .B Super\-q
 Close focused window.
 .TP
-.B Super\-t/T
-Sets tiled/bstack layouts.
-.TP
 .B Super\-f
 Toggle fullscreen window.
 .TP
 .B Super\-F
 Toggle floating layout.
-.TP
-.B Super\-y/Y
-Sets Fibonacci spiral/dwinde layouts.
-.TP
-.B Super\-u/U
-Sets centered master layout.
-.TP
-.B Super\-i/I
-Sets centered master or floating master layouts.
 .TP
 .B Super\-space
 Zooms/cycles focused window to/from master area.
@@ -135,11 +112,8 @@ View all windows with any tag.
 .B Super\-Control\-[1..n]
 Add/remove all windows with nth tag to/from the view.
 .TP
-.B Super\-Shift\-q
+.B Super\-Shift\-Escape
 Quit dwm.
-.TP
-.B Mod1\-Control\-Shift\-q
-Menu to refresh/quit/reboot/shutdown.
 .SS Mouse commands
 .TP
 .B Super\-Left click

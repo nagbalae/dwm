@@ -286,7 +286,6 @@ static Display *dpy;
 static Drw *drw;
 static Monitor *mons, *selmon;
 static Window root, wmcheckwin;
-
 /* configuration, allows nested code to access above variables */
 #include "config.h"
 
@@ -1051,12 +1050,12 @@ loadxrdb()
       xrdb = XrmGetStringDatabase(resm);
 
       if (xrdb != NULL) {
-        XRDB_LOAD_COLOR("dwm.normbordercolor", normbordercolor);
-        XRDB_LOAD_COLOR("dwm.normbgcolor", normbgcolor);
-        XRDB_LOAD_COLOR("dwm.normfgcolor", normfgcolor);
-        XRDB_LOAD_COLOR("dwm.selbordercolor", selbordercolor);
-        XRDB_LOAD_COLOR("dwm.selbgcolor", selbgcolor);
-        XRDB_LOAD_COLOR("dwm.selfgcolor", selfgcolor);
+        XRDB_LOAD_COLOR("dwm.foreground", normbordercolor);
+        XRDB_LOAD_COLOR("dwm.background", normbgcolor);
+        XRDB_LOAD_COLOR("dwm.foreground", normfgcolor);
+        XRDB_LOAD_COLOR("dwm.foreground", selbordercolor);
+        XRDB_LOAD_COLOR("dwm.background", selbgcolor);
+        XRDB_LOAD_COLOR("dwm.foreground", selfgcolor);
       }
     }
   }

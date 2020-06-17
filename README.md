@@ -11,11 +11,13 @@ Go to [suckless' dwm page](https://dwm.suckless.org) or use [Luke's](https://git
 - Works with picom
 - Vanity-Gapps
 - Xrdb (using color0,3,7)
+- Vacant tags
 - The rest you can see for yourself in the code!
 ## Todo:
 - Move shortcuts to sxhkd
 - ~~Selection colour from Xresources~~
 - ~~Gapps~~
+- ~~Vacant tags~~
 - Swallow
 - ~~Rotate stack~~
 - Add Layouts

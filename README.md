@@ -17,5 +17,5 @@ Go to [suckless' dwm page](https://dwm.suckless.org) or use [Luke's](https://git
 - ~~Selection colour from Xresources~~
 - ~~Gapps~~
 - Swallow
-- Rotate stack
+- ~~Rotate stack~~
 - Add Layouts

@@ -9,13 +9,12 @@ license=('MIT')
 options=(zipman)
 depends=('libx11' 'libxinerama' 'libxft')
 makedepends=('git')
-install=arch/dwm.install
 provides=('dwm')
 conflicts=('dwm')
 source=("$_pkgname::git+https://github.com/nagbalae/dwm"
-        config.h)
+        )
 md5sums=( 'SKIP'
-         'SKIP') # so you can customize config.h
+         )
 
 pkgver(){
   cd $_pkgname

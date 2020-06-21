@@ -9,8 +9,8 @@ Go to [suckless' dwm page](https://dwm.suckless.org) or use [Luke's](https://git
 - **before installing change termcmd's urxvt to your terminal!, otherwise you'll have no terminal!**
 - after install use sxhkd or some other program to set your keybinds up
 - make or download a statusbar script
-- if you want to make the cool wallpaper changer script, use wal or something, it's a few lines! (don't forget to refresh dwm's colours at the end with 'xdotool key super+shift+F5' or equialent!)
-you are good to go!
+- if you want to make the cool wallpaper changer script, use wal or something, it's a few lines! (don't forget to refresh dwm's colours at the end with 'xdotool key super+shift+F5' or equialent!)  
+you are good to go, have fun!
 ## Features & Patches(mostly patches from suckless):
 - Kinda compatible with pywal (use 'xdotool key super+shift+F5' at the end of the wallpaper changer script)
 - Modkey is Super (Windows key)

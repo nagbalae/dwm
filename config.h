@@ -13,7 +13,7 @@ static const unsigned int gappih    = 10;       /* horiz inner gap between windo
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
+static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 /* colours */
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -79,6 +79,7 @@ static const char *termcmd[]  = { "urxvt", NULL };
 #include <X11/XF86keysym.h>
 
 static Key keys[] = {
+	/* i use sxhkd to do most of the keybinding, i left the terminal in just in case*/
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
@@ -87,16 +88,16 @@ static Key keys[] = {
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,              XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER")},
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("$TERM -e nmtui")},
-	{ MODKEY,                       XK_r,      spawn,          SHCMD("$TERM -e ranger")},
+	/*{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER")},*/
+	/*{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("urxvt -e nmtui")},*/
+	/*{ MODKEY,                       XK_r,      spawn,          SHCMD("urxvt -e ranger")},*/
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} },
@@ -106,8 +107,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },
 	{ MODKEY,			XK_f,	   fullscreen,  {0} },
-	{ MODKEY,                       XK_m,      spawn,          SHCMD("$TERM -e ncmpcpp")},
-	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("$TERM -e pulsemixer")},
+	/*{ MODKEY,                       XK_m,      spawn,          SHCMD("urxvt -e cmus")},*/
+	/*{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("urxvt -e pulsemixer")},*/
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -126,16 +127,16 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_Escape, quit,           {0} },
-	{ MODKEY,                       XK_F5,     spawn,          SHCMD("sh ~/.sh/changewallpaper") },
+/*	{ MODKEY,                       XK_F5,     spawn,          SHCMD("sh ~/.sh/changewallpaper") },*/
 	{ MODKEY|ShiftMask,             XK_F5,     xrdb,           {.v = NULL } },/*I emulate this at the end of changewallpaper*/
 	/*special keys*/
-	{ 0, XF86XK_TouchpadToggle, 		   spawn,	   SHCMD("~/.sh/touchpad") },
+	/*{ 0, XF86XK_TouchpadToggle, 		   spawn,	   SHCMD("~/.sh/touchpad") },
 	{ 0, XF86XK_MonBrightnessUp,		   spawn,	   SHCMD("light -A 10") },
 	{ 0, XF86XK_MonBrightnessDown,		   spawn,	   SHCMD("light -U 10") },
 	{ 0, XF86XK_AudioMute,			   spawn,	   SHCMD("pamixer -t") },
 	{ 0, XF86XK_AudioRaiseVolume,		   spawn,	   SHCMD("pamixer --allow-boost -i 5") },
 	{ 0, XF86XK_AudioLowerVolume,		   spawn,	   SHCMD("pamixer --allow-boost -d 5") },
-	{ 0, XF86XK_Sleep,		   spawn,	   SHCMD("sudo -A zzz") },
+	{ 0, XF86XK_Sleep,		   spawn,	   SHCMD("sudo -A zzz") },*/
 	/*gapps*/
 	{ MODKEY|ControlMask,              XK_k,      incrgaps,       {.i = +2 } },
 	{ MODKEY|ControlMask,              XK_j,      incrgaps,       {.i = -2 } },
